@@ -1,0 +1,71 @@
+<!-- 顶部视频 -->
+<view class="prism-player">
+    <video 	 enable-play-gesture="true"  style="width:100%;height: 100%;" preload="preload" autoplay="autoplay" src="http://bizcommon.alicdn.com/KM596pxVraOsnEmgAP7/KIwe9bfkSlBaZqNrJPO__hd.mp4?t=212787fc16527078995108090e7eef&b=video&p=cloudvideo_http_2595785_0"></video>
+</view>
+
+<view class="xiaowei_show-info-d">
+    <view class="xiaowei_image">
+        <image mode="aspectFill" src="/images/list_1.jpg"></image>
+    </view>
+    <view class="xaiowei_content">
+        <view class="xiaowei_1">坏蛋联盟</view>
+        <view class="xiao_hei">The Bad Guys</view>
+        <view class="xiao_hei">100分钟 / 动画 / 喜剧 / 动作 / 美国</view>
+        <view class="xiao_hei">2022-04-29 在中国大陆上映</view>
+    </view>
+</view>
+
+ <!-- 展示评分部分  -->
+<view class="show-remark">
+    <view class="remark-wrapper">
+        <view class="remark-head">
+            <view class="xiaowei_at_left">
+                <text style="margin-right: 20rpx;">淘票票评分</text> 
+                <text class="iconfont icon-jinggao" style="font-size: 40rpx;width: 40rpx;height: 40rpx;"></text>
+            </view> 
+            <text  class="iconfont icon-right" style="width: 1em;height: 1em;"></text>
+        </view>
+        <view class="remark-body">
+            <view class="xiaowei_left">
+                <view class="xiaowei_1">8.7</view>
+                <view class="xiaowei_2">
+                    <text wx:for="{{[1,2,3,4,5]}}"  class="iconfont icon-wujiaoxing" style="width: 1em;height: 1em;color: #fe942a;"></text>
+                </view>
+                <view class="xiaowei_3">30.0万人评价</view>
+            </view>
+            <view class="xiaowei_center">
+                <view wx:for="{{[1,2,3,4,5]}}" class="line-score-item" style="display: flex;">
+                        <!-- <view> -->
+                            <text wx:for="{{[1,2,3,4,5]}}"  class="iconfont icon-wujiaoxing" style="color: black;font-size: 24rpx;"></text>
+                        <!-- </view> -->
+                        <!-- 进度条这个地方有问题 -->
+                        <!-- <view class="progress-box">
+                             <progress style="width: 60prx;" percent="20" show-info stroke-width="3"/>
+                        </view> --> 
+                </view>
+            </view>
+            <view class="xiaowei_right">
+                <view class="wei_want_watch">
+                    <text class="xiaowei">3.1万</text><text class="laowei">人想看</text> 
+                </view>
+                <view  class="wei_watched">
+                    <text class="xiaowei">32.5万</text><text class="laowei">人看过</text> 
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+ <!-- 底部固定的购买栏 -->
+<view class="bottom-fix-wrap">
+    <view class="guide">
+        <view class="title">周票房榜No.1</view>
+        <view class="sub_title">总票房破1.3亿</view>
+    </view>
+    <view class="buybt">立即购买</view>
+</view>
+
+
+
+
+

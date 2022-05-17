@@ -1,0 +1,178 @@
+page{
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+/* 视频部分的样式 */
+.prism-player{
+    background-color: #000;
+    position: relative;
+    width: 100%;
+    height: 468rpx;
+}
+ video{
+    position: absolute;
+    transform-origin: center;
+    /* 当视频大小与 video 容器大小不一致时，视频的表现形式 */
+    object-fit: contain;
+} 
+
+/* 评分展示部分 */
+.xiaowei_show-info-d{
+    position: relative;
+    border-top-left-radius: 3.2vw;
+    border-top-right-radius: 3.2vw;
+    background-color: rgb(255, 255, 255);
+    min-height: 36vw;
+    padding: 5.33333333vw 5.33333333vw 0;
+    margin-top: -2.66666667vw;
+    margin-bottom: 2.66666667vw;
+    display: flex;
+}
+.xiaowei_show-info-d .xiaowei_image image{
+    width: 25.86666667vw;
+    height: 36vw;
+    margin-right: 30rpx;
+    border-radius: 20rpx;
+}
+.xiaowei_show-info-d .xaiowei_content .xiaowei_1{
+    max-width: 56vw;
+    margin-bottom: 1.0666667vw;
+    padding-right: 4vw;
+    text-align: left;
+    line-height: 6.66666667vw;
+    font-size:44rpx;
+    overflow: hidden;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+}
+.xiaowei_show-info-d .xaiowei_content .xiao_hei{
+    padding-bottom: 2.13333333vw;
+    text-align: left;
+    font-size: .8125rem;
+    line-height: 1.1;
+    color: #777;
+    width: 55vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* 展示评分部分 */
+.show-remark{
+    margin: 2.66666667vw 5.33333333vw;
+}
+.show-remark .remark-wrapper{
+    border: 1px solid #e4e4e4;
+    border-radius: 12px;
+    padding: 2.66666667vw 4vw;
+}
+.show-remark .remark-wrapper .remark-head{
+    color:rgb(46, 51, 62) ;
+    font-size: 32rpx; 
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* body部分 */
+.remark-body{
+    display: flex;
+    margin-top: 20rpx;
+}
+
+.remark-body .xiaowei_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24vw;
+    /* background-color: rebeccapurple; */
+}
+.remark-body .xiaowei_left .icon-jinggao{
+    /* 这个先写着，后面再用 */
+    position: relative; 
+    width: 4.5333333vw;
+    height: 4.5333333vw;
+    background-size: contain;
+}
+.remark-body  .xiaowei_left .xiaowei_1{
+    color: #fe942a;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 8vw;
+}
+/* xiaowei_center() 中间统计部分 */
+.remark-body .xiaowei_center{
+    /* background-color: red; */
+    display: block;
+    overflow: hidden;
+    padding: .66666667vw 2.66666667vw;
+    flex: 1;
+}
+
+.remark-body  .xiaowei_left .xiaowei_3{
+    font-size: 12px;
+    color: #999;
+    margin-top: .8vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.xiaowei_right{
+    font-size: 12px;
+    max-width: 34.6666667vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.xiaowei_right .xiaowei{
+    color: rgb(46, 51, 62);
+    font-weight: 700;
+    margin-right: 10rpx;
+}
+.xiaowei_right .laowei{
+    font-size: 20rpx;
+}
+
+
+
+/* 底部固定的购买栏*/
+.bottom-fix-wrap{
+    position: fixed!important;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 2.4vw 3.2vw;
+}
+.bottom-fix-wrap .guide{
+    flex: 1;
+    text-align: left;
+}
+.bottom-fix-wrap .guide .title{
+    font-size: 14px;
+    font-weight: 500;
+    color: #2e333e;
+}
+.bottom-fix-wrap .guide .sub_title{
+    font-size: 11px;
+    color: #959aa5;
+}
+.bottom-fix-wrap .buybt{
+    width: 48vw;
+    box-sizing: border-box;
+    height: 10.4vw!important;
+    z-index: 1;
+    position: relative;
+    background-color: rgb(251, 84, 170);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200rpx;
+    color: #fff;
+}

@@ -67,7 +67,7 @@
                 </view>
             </view>
         <!-- 中  -->
-            <view class="list_main_content_content">
+            <view class="list_main_content_content" bindtap="toDetail">
                 <view class="movie-name-wrapper">
                     <text class="movie-name">坏蛋联盟</text>
                 </view>

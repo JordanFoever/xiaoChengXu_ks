@@ -19,6 +19,12 @@ Page({
     onLoad(options) {
 
     },
+    // 跳转到电影的详情页面
+    toDetail(){
+        wx.navigateTo({
+          url: '/pages/movieDetail/movieDetail',
+        })
+    },
     // 切换导航栏时(获取点击时自定义的样式)
     navClick(e){
         let index = e.currentTarget.dataset.index;
