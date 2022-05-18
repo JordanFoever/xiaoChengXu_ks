@@ -1,7 +1,7 @@
-<view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" class="content" bindtap="toFind">
-    <image mode="aspectFill" src="/images/list_1.jpg"></image>
+<view wx:for="{{findList}}" class="content" data-aid="{{item.id}}" bindtap="toFindDetail">
+    <image mode="aspectFill" src="{{item.timage}}"></image>
     <view class="wei_content">
-        <view class="wei_top">T1战队延迟21图”火了，拳头偷偷修改公告，大师兄都看不下去了</view>
-        <view class="wei_buttom">热播综艺集结地</view>
+        <view class="wei_top">{{item.title}}</view>
+        <view class="wei_buttom">{{item.author}}</view>
     </view>
 </view>

@@ -6,7 +6,8 @@
         "pages/me/me",
         "pages/movieDetail/movieDetail",
         "pages/findDetail/findDetail",
-        "pages/index/index"
+        "pages/index/index",
+        "pages/sendPinLun/sendPinLun"
     ],
     "window": {
         "backgroundTextStyle": "light",

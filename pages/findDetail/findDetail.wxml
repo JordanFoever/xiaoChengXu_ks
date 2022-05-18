@@ -1,77 +1,55 @@
-<view class="xiaowei_title">T1战队延迟21图”火了，拳头偷偷修改公告，大师兄都看不下去了</view>
+<view class="xiaowei_title">{{comFindList.title}}</view>
 <view class="xiaowei_autor">
-    <image class="xiao_user-image"  src="/images/list_1.jpg" mode="aspectFill"></image>
+    <image class="xiao_user-image"  src="{{comFindList.aimage}}" mode="aspectFill"></image>
     <view class="xiaowei_name-and-time">
-        <view class="wei_name">热播综艺集结地</view>
+        <view class="wei_name">{{comFindList.author}}</view>
         <view class="wei_time">
-            <text style="margin-right: 20rpx;">2022-05-16 12:12:12</text>
-            <text>武汉</text> 
+            <text style="margin-right: 20rpx;">{{comFindList.time}}</text>
+            <text>{{comFindList.address}}</text> 
         </view>
     </view>
 </view>
 <view class="xiaowei_img">
-    <image  mode="aspectFill" src="/images/list_1.jpg"></image>
+    <image  mode="aspectFill" src="{{comFindList.timage}}"></image>
 </view>
 <view class="xiaowei_content">
-    就算你留恋开放在水中娇艳的水仙，别忘了山谷里寂寞的角落里，野百合也有春天。
-    秋天的雨，翩翩而来。轰的一声，是谁打翻了墨水瓶，秋雨在云的掩护下飘飘而来，它是一位神奇的画家。大地在它的笔下变得更加美丽了，树直了，花艳了。就这样秋雨在变化中款款而归，它美好的身影烙在了人们的心中。
-    但愿你知道，有个人时时关怀着你，有个人时时惦念着你。像星光闪闪的，是你含笑传情的眼睛。它缀在我的心幕上，夜夜亮晶晶。
-    有一种隐忍其实是蕴藏着的一种力量，有一种静默其实是惊天的告白。
-    青年之文明，奋斗之文明也，与境遇奋斗，与时代奋斗，与经验奋斗。故青年者，人生之王，人生之春，人生之华也。
-    独坐灯下，我将对你长长的思念浓缩成一首首短短的诗句，那一首首短短的诗句都说明我对你长长的思念。
-    没牵住你的手是我一生的错，无论是在天涯海角还是近在眼前，你都是我心中最深的思念最深的痛！
-    盛夏的一天中午，火辣辣的太阳毫不留情地烤着大地上的一切。大地被晒得发焦发烫，地面上仿佛被一个巨大的蒸笼罩住了，使人透不过气来。    
-</view>
-<br/>
-<br/>
-<view class="xiaowei_content">
-    就算你留恋开放在水中娇艳的水仙，别忘了山谷里寂寞的角落里，野百合也有春天。
-    秋天的雨，翩翩而来。轰的一声，是谁打翻了墨水瓶，秋雨在云的掩护下飘飘而来，它是一位神奇的画家。大地在它的笔下变得更加美丽了，树直了，花艳了。就这样秋雨在变化中款款而归，它美好的身影烙在了人们的心中。
-    但愿你知道，有个人时时关怀着你，有个人时时惦念着你。像星光闪闪的，是你含笑传情的眼睛。它缀在我的心幕上，夜夜亮晶晶。
-    有一种隐忍其实是蕴藏着的一种力量，有一种静默其实是惊天的告白。
-    青年之文明，奋斗之文明也，与境遇奋斗，与时代奋斗，与经验奋斗。故青年者，人生之王，人生之春，人生之华也。
-    独坐灯下，我将对你长长的思念浓缩成一首首短短的诗句，那一首首短短的诗句都说明我对你长长的思念。
-    没牵住你的手是我一生的错，无论是在天涯海角还是近在眼前，你都是我心中最深的思念最深的痛！
-    盛夏的一天中午，火辣辣的太阳毫不留情地烤着大地上的一切。大地被晒得发焦发烫，地面上仿佛被一个巨大的蒸笼罩住了，使人透不过气来。 
+{{comFindList.content}}
 </view>
 
 <view class="comment_title">评论部分</view>
 <!-- 评论部分 -->
-<view wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" class="xiaowei_comment">
+<view wx:for="{{pinLunList}}" class="xiaowei_comment">
   <!-- 上面 -->
     <view class="xiaowei_top">
-        <image mode="aspectFill" src="/images/list_1.jpg"></image>
+        <image mode="aspectFill" src="{{item.image}}"></image>
         <view>
-            <view style="font-weight: 700;">小王</view>
-            <view style="margin-top: 20rpx;font-size: 24rpx;">2011-11-12</view>
+            <view style="font-weight: 700;">{{item.username}}</view>
+            <view style="margin-top: 20rpx;font-size: 24rpx;">{{item.time}}</view>
         </view>
     </view>
     <!-- 下面 -->
     <view class="xiaowei_buttom">
-        没牵住你的手是我一生的错，无论是在天涯海角还是近在眼前，你都是我心中最深的思念最深的痛！
-    盛夏的一天中午，火辣辣的太阳毫不留情地烤着大地上的一切。大地被晒得发焦发烫，地面上仿佛被一个巨大的蒸笼罩住了，使人透不过气来。
+       {{item.content}}
     </view>
 </view>
 
  <!-- 底部固定的发送消息区 -->
  <view class="bottom-fix-wrap">
-    <view class="guide">
-        <view class="title" style="margin-right: 180rpx;">说点什么吧</view>
+    <view class="guide" bindtap="sendPinLun" data-index="{{comFindList.id}}">
+        <view  class="title" style="margin-right: 180rpx;">说点什么吧</view>
         <view>
             <text  class="iconfont icon-dianzan"></text>
-            <text style="margin-left: 10rpx;">1</text>
+            <text style="margin-left: 5rpx;">1</text>
         </view >
-        <view style="margin-left:30rpx;">
+        <view style="margin-left:20rpx;">
             <text class="iconfont icon-pinglun"></text>
-            <text style="margin-left: 10rpx;">评论</text>
+            <text style="margin-left: 5rpx;">{{pinlunNum}}</text>
         </view>
-     
     </view>
-
     <view >
         <view class="buybt">发送</view>
     </view>
-    
+
 </view>
 
 

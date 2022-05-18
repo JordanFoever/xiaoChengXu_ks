@@ -1,39 +1,41 @@
-// pages/find/find.js
+const app = getApp();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        baseURL1:app.globalData.baseURL1,
+        commentContent:''
     },
+    
+    formSubmit(e){
+        console.log(e.detail.value);
+        this.setData({
+            commentContent:e.detail.value.textarea_content
+        }) 
+        wx.request({
+          url:this.data.baseURL1+`/xiaoChengXu_ks_houtai_war_exploded/addPinLun?textarea_content=${this.data.commentContent}&id=${this.data.id}`,
+        })
+      },
+      toDetail(){
+          wx.redirectTo({
+            url: '/pages/find/find',
+          })
+        //   wx.navigateTo({
+        //     url: '/pages/find/find',
+        //   })
+      },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-      this.getRequest();
-    },
-    getRequest(){
-      wx.request({
-        url: 'http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/findAllFindServlet',
-        method:'get',
-        success:res=>{
-          console.log(res.data);
-          this.setData({
-            findList:res.data
-          })
-        }
-      })
-  },
-    // 去详情页面
-    toFindDetail(e){
-      console.log(e.currentTarget.dataset.aid);
-      // 获取点击的页面传过来的id传给详情页面
-      let  id =  e.currentTarget.dataset.aid
-        wx.navigateTo({
-          url: '/pages/findDetail/findDetail?id='+id,
+        console.log(options);
+        this.setData({
+            id:options.id
         })
     },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
