@@ -1,0 +1,12 @@
+/* 回到顶部 */
+.go_top{
+    width: 80rpx;
+    height: 80rpx;
+    position: fixed;
+    bottom: 200rpx;
+    right: 200rpx;
+    /* background-color: red; */
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+  }

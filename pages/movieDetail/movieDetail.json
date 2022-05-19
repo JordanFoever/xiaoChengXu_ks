@@ -1,4 +1,6 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+        "component-toTop": "/commopent/toTop/toTop"
+    },
     "navigationBarTitleText": "影片页面详情"
 }

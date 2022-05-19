@@ -1,7 +1,7 @@
 page{
     width: 100vw;
     height: 100vh;
-    padding: 0;
+    /* padding-bottom: 200rpx; */
     margin: 0;
 }
 /* 视频部分的样式 */
@@ -134,9 +134,197 @@ page{
 .xiaowei_right .laowei{
     font-size: 20rpx;
 }
+/* 中间的间隔 */
+.myMin{
+    background-color: #f5f6f8;
+    width: 100%;
+    height: 20rpx;
+}
+/* 简介,影评,更多 */
+.jianjie_yinpin_gengduo{
+    display: flex;
+    justify-content: space-around;
+    font-size: 32rpx;
+    margin-top: 25rpx;
+}
+/* .jianjie_yinpin_gengduo>view{
+     border: 2rpx solid red;
+} */
+.jianjie_yinpin_gengduo .yinpin{
+    position: relative;
+}
+.jianjie_yinpin_gengduo .yinpin text{
+    position: absolute;
+    right: -30px;
+    top: -7px;
+    color: rgb(149, 154, 165);
+    font-size: 24rpx;
+    font-weight: 400;
+}
+.jianjie_yinpin_gengduo .select{
+    border-bottom: 2rpx solid red;
+    padding-bottom: 20rpx;
+    color: red;
+}
+/* 简介部分的样式 */
+.jianjie_yinpin_gengduo .jianjie{
+    margin-bottom: 30rpx;
+}
+.jianjie_content{
+    /* background-color: red; */
+    width: 95%;
+    margin: 0 auto;   
+}
+.jianjie_content .wei_font{
+    margin-bottom: 3.8vw;
+    text-align: justify;
+    line-height: 6.7vw;
+    overflow: hidden;
+    box-sizing: content-box;
+    font-size: 30rpx;
+    color: rgb(46, 51, 62);
+}
+/*文本描述  */
 
+.conts {
+    font-size: 28rpx;
+    line-height: 50rpx;
+    /* background-color: grey; */
+    /*关键属性（必须有的）  */
+    display: -webkit-box;
+  }
+  
+  .hide {
+    /*规定子元素的排列方向 */
+    -webkit-box-orient: vertical;
+    /*限制文本显示的行数  */
+    -webkit-line-clamp: 3;
+    /*实现多余的文字隐藏并用省略号来代表被隐藏的文字  */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+/* 演职人员 */
+.jianjie_content .wei_author{
+    display: flex;
+    justify-content: space-between;
+} 
+.jianjie_content .wei_author .xiaowei_1{
+    font-weight: 700;
+}
+/* 演员列表 */
+.scroll_view
+{
+	width: 100%;
+	height: 210rpx;
+	white-space: nowrap;
+    margin: 20rpx 0rpx;
+    margin-bottom: 200rpx;
+}
+.actors
+{
+    display: inline-block;
+}
+.actors .author_image_1
+{
+	width:23vw;
+    height: 32vw;
+    border-radius: 8rpx;
+	margin-right:30rpx;
+}
+.actors .author_image_2{
+    height: 31vh;
+    border-radius: 10rpx;
+    margin-right:14rpx;
+}
+.actors view
+{
+	/* white-space: normal; */
+	text-align: center;
+}
+/* 票房 */
+.wei_piaoFang{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20rpx;
+    /* margin-bottom: 200rpx; */
+}
+.wei_piaoFang .wei{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wei_piaoFang .quan_1{
+    font-size: 60rpx;
+    font-weight: 400;
+}
+.wei_piaoFang .quan_2{
+    margin-top: 15rpx;
+    color: #959aa5;
+    font-size: 26rpx;
+}
+/* 票房详情 */
+.piaoFangDetail{
+    text-align: center;
+    color:rgb(49, 169, 245);
+    margin-top: 40rpx;
+    margin-bottom: 100px;
+    
+}
+/* 观众热评 */
+.yinpin_content{
+    padding:0 5vw;
+    /* padding-bottom: 100rpx; */
+    /* ackground-color: palevioletred; */
+}
+.hot_comment{
+    margin-top: 20rpx;
+}
+.hot_item view{
+    float: left;
+    margin-right: 2.1vw;
+    margin-bottom: 2.7vw;
+    padding: 1.86666667vw 4vw;
+    text-align: left;
+    line-height: 3.7vw;
+    font-size: 13px;
+    border: 1px solid hsla(0,0%,73.7%,.5);
+    border-radius: 100px;
+}
+.hot_item{
+    margin-top: 40rpx;
+}
+ /* 评论部分 */
+ .main_comment{
+     /* 将上面浮动的内容撑开 */
+     /* margin-top:400rpx; */
+     margin-bottom: 30rpx;
+ }
+ .main_comment .xiaowei_top{
+     display: flex; 
+     align-items: center;
+ }
+ .main_comment .xiaowei_top .image{
+    width: 15vw;
+    height: 15vw;
+    margin-right:5vw;
+    border-radius: 100%;
+ }
+ .main_comment .xiaowei_bottom{
+     display: flex;
+     justify-content: space-between;
+ }
 
-
+/* 回到顶部 */
+.go_top{
+    width: 120rpx;
+    height: 120rpx;
+    position: fixed;
+    bottom: 150rpx;
+    right: 40rpx;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+  }
 /* 底部固定的购买栏*/
 .bottom-fix-wrap{
     position: fixed!important;

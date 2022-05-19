@@ -1,0 +1,1 @@
+<image class="go_top" hidden="{{!go_top_show}}" bindtap="goTop"></image>

@@ -7,7 +7,9 @@
         "pages/movieDetail/movieDetail",
         "pages/findDetail/findDetail",
         "pages/index/index",
-        "pages/sendPinLun/sendPinLun"
+        "pages/sendPinLun/sendPinLun",
+        "pages/test/test",
+        "pages/buy/buy"
     ],
     "window": {
         "backgroundTextStyle": "light",

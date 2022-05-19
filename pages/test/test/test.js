@@ -1,4 +1,4 @@
-// pages/find/find.js
+// pages/test/test/test.js
 Page({
 
     /**
@@ -7,36 +7,14 @@ Page({
     data: {
 
     },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
-      this.getRequest();
+
     },
-    getRequest(){
-      wx.request({
-        url: 'http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/findAllFindServlet',
-        method:'get',
-        success:res=>{
-          console.log(res.data);
-          this.setData({
-            findList:res.data
-          })
-        }
-      })
-  },
-    // 去详情页面
-    toFindDetail(e){
-      console.log(e.currentTarget.dataset.aid);
-      // 获取点击的页面传过来的id传给详情页面
-      let  id =  e.currentTarget.dataset.aid
-        wx.navigateTo({
-          url: '/pages/findDetail/findDetail?id='+id,
-        })
-        //  wx.redirectTo({
-        //     url:  '/pages/findDetail/findDetail?id='+id,
-        //   })
-    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

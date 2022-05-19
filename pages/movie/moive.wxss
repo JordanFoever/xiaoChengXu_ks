@@ -27,7 +27,6 @@ page{
 .wei_right text{
     margin-left: 10rpx;
 }
-
 /* 列表部分 */
 .xiaowei_list{
     color:rgb(46, 51, 62);

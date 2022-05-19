@@ -6,25 +6,45 @@ Page({
      */
     data: {
         baseURL1:app.globalData.baseURL1,
-        commentContent:''
+        commentContent:'',
+         //字数限制
+        maxWord: 500,
+        currentWord: 0
     },
-    
-    formSubmit(e){
-        console.log(e.detail.value);
-        this.setData({
-            commentContent:e.detail.value.textarea_content
-        }) 
-        wx.request({
-          url:this.data.baseURL1+`/xiaoChengXu_ks_houtai_war_exploded/addPinLun?textarea_content=${this.data.commentContent}&id=${this.data.id}`,
-        })
-      },
+    // // 获取文本框中的数据
+    // formSubmit(e){
+    //     console.log(e.detail.value);
+    //     this.setData({
+    //         commentContent:e.detail.value.textarea_content
+    //     }) 
+    //     wx.request({
+    //       url:this.data.baseURL1+`/xiaoChengXu_ks_houtai_war_exploded/addPinLun?textarea_content=${this.data.commentContent}&id=${this.data.id}`,
+    //     })
+    //   },
       toDetail(){
           wx.redirectTo({
             url: '/pages/find/find',
           })
-        //   wx.navigateTo({
-        //     url: '/pages/find/find',
-        //   })
+          // wx.navigateTo({
+          //   url: '/pages/find/find',
+          // })
+        wx.request({
+            url:this.data.baseURL1+`/xiaoChengXu_ks_houtai_war_exploded/addPinLun?textarea_content=${this.data.commentContent}&id=${this.data.id}`,
+        })
+      },
+      // 获得输入框的内容
+      getInputComment(options){
+          let value = options.detail.value
+          console.log("输入框输入的内容是",value);
+          //解析字符串长度转换成整数。
+          var wordLength = parseInt(value.length); 
+          if (this.data.maxWord < wordLength) {
+            return ;
+          }
+          this.setData({
+            currentWord: wordLength,
+            commentContent:options.detail.value 
+          });
       },
     /**
      * 生命周期函数--监听页面加载
@@ -36,52 +56,4 @@ Page({
         })
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
-    }
 })

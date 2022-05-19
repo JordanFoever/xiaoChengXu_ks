@@ -1,66 +1,108 @@
-// pages/movieDetail/movieDetail.js
+const app = getApp();
 Page({
-
     /**
      * 页面的初始数据
      */
     data: {
-
+        baseURL3:app.globalData.baseURL3,
+        select:[true,false,false],
+        //判断展开和收起
+        isF: true
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-
+  	// 页面加载
+	onLoad: function (options) {
+        let id = options.id;
+        console.log("传过来的id",id);
+		let labelUrl = "https://m.douban.com/rexxar/api/v2/movie/"+id+"/tags?count=8";
+        this.getMovieData(id);
+        this.getCommentData(id);
+        this.getMovieTagData(id);
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
+        //影片详细数据
+       getMovieData(id){
+        wx.request({
+			url: this.data.baseURL3+'/rexxar/api/v2/movie/'+id,
+			method:"GET",
+			success:res=>{
+                console.log("影片详细数据",res.data);
+				this.setData({
+                    movieDataList:res.data
+                })
+			}
+		})
+       },
+    //    得到评论的数据
+    getCommentData(id){
+        // 请求评论数据
+		wx.request({
+			url: this.data.baseURL3+'/rexxar/api/v2/movie/'+id+"/interests",
+			method:"GET",
+			success:(res) => {
+                console.log(res.data);
+				this.setData({
+					commentDataList:res.data.interests
+				})
+			}
+		})
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
+    // 请求影片标签数据
+    getMovieTagData(id){
+		wx.request({
+			url: this.data.baseURL3+'/rexxar/api/v2/movie/'+id+"/tags?count=8",
+			method:"GET",
+			success:(res) => {
+				this.setData({
+					labelData:res.data.tags
+				})
+			}
+		})
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
+     // 获取滚动条当前位置
+     onPageScroll: function (e) {
+        // console.log(e)
+        if (e.scrollTop > 300) {
+            this.setData({
+                go_top_show: true
+            })
+        } else {
+            this.setData({
+                go_top_show: false
+            })
+        }
     },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
+    // 回到顶部
+    goTop: function (e) {
+        if (wx.pageScrollTo) {
+            wx.pageScrollTo({
+                scrollTop: 0
+            })
+        } else {
+            wx.showModal({
+                title: '提示',
+                content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+            })
+        }
     },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
+    // 导航栏选择函数
+    toJianJie(){
+        this.setData({
+            select:[true,false,false]
+        })
     },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
+    toYinPin(){
+        this.setData({
+            select:[false,true,false]
+        })
     },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
-    }
+    toGengDuo(){
+        this.setData({
+            select:[false,false,true]
+        })
+    },
+    //展开与显示的判断函数
+    aa: function() {
+        this.setData({
+          isF: !this.data.isF
+        })
+      }
 })
