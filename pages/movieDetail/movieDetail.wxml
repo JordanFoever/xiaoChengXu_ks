@@ -11,7 +11,7 @@
         <view class="xiaowei_1">{{movieDataList.title}}</view>
         <view class="xiao_hei"><text wx:for="{{movieDataList.directors}}">{{item.name}}</text></view>
         <view class="xiao_hei"><text wx:for="{{movieDataList.durations}}">{{item}}</text> / 动画 / 喜剧 / 动作 / <text wx:for="{{movieDataList.countries}}">{{item}}</text></view>
-        <view class="xiao_hei"><text wx:for="{{movieDataList.pudate}}">item</text></view>
+        <view class="xiao_hei"><text wx:for="{{movieDataList.pubdate}}">{{item}}</text></view>
     </view>
 </view>
 
@@ -34,14 +34,17 @@
                 <view class="xiaowei_3">{{movieDataList.rating.count}}人评价</view>
             </view>
             <view class="xiaowei_center">
-                <view wx:for="{{[1,2,3,4,5]}}" class="line-score-item" style="display: flex;">
+                <view wx:for="{{5}}" class="line-score-item" style="display: flex;">
                     <!-- <view> -->
-                    <text wx:for="{{[1,2,3,4,5]}}" class="iconfont icon-wujiaoxing" style="color: black;font-size: 24rpx;"></text>
+
+                    <text style="font-size: 10rpx;height: 10rpx;line-height: 20rpx;color: #fe942a;font-size: 24rpx;" wx:for="{{3}}" class="iconfont icon-wujiaoxing"></text>
+                    <text style="font-size: 10rpx;height: 10rpx;line-height: 20rpx;" wx:for="{{2}}" class="iconfont icon-wujiaoxing" style="color: black;font-size: 24rpx;"></text>
+
                     <!-- </view> -->
                     <!-- 进度条这个地方有问题 -->
-                    <!-- <view class="progress-box">
-                             <progress style="width: 60prx;" percent="20" show-info stroke-width="3"/>
-                        </view> -->
+                    <view class="progress-box" style="display: flex;align-items: center;">
+                        <progress active="true" activeColor="#6f6f6f" backgroundColor="#c8c8c8" style="width:180rpx;" percent="80" stroke-width="3" />
+                    </view>
                 </view>
             </view>
             <view class="xiaowei_right">
@@ -149,42 +152,65 @@
     <view class="hot_item">
         <view class="all">全部</view>
         <view class="new">最新</view>
-        <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" class="wei_xiao">
-            <text>有图</text>
-            <text>123</text>
+        <!-- 这个地方到时候改进一下(太) -->
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">好评</text>
+            <text>{{commentDataList.length*3}}</text>
         </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">差评</text>
+            <text>{{commentDataList.length*2}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">影评达人</text>
+            <text>{{commentDataList.length}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">有图</text>
+            <text>{{commentDataList.length*19}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">购票</text>
+            <text>{{commentDataList.length*4}}</text>
+        </view>
+        <view class="wei_xiao">
+            <text style="margin-right: 10rpx;">蠢萌坏蛋圈粉</text>
+            <text>{{commentDataList.length*5}}</text>
+        </view>
+
     </view>
 
-    <view style="margin-top:400rpx;">
+    <view style="margin-top:400rpx;margin-bottom: 200rpx;">
         <!-- 评论部分 -->
-        <view wx:for="{{[1,2,3,4,5,6,7]}}" class="main_comment">
+        <view wx:for="{{commentDataList}}" class="main_comment">
             <view class="xiaowei_top">
-                <image mode="aspectFill" class="image" src="/images/temporary/author.jpg"></image>
+                <image mode="aspectFill" class="image" src="{{item.user.avatar}}"></image>
                 <view>
                     <view>
-                        小**啊
+                        {{item.user.name}}
                     </view>
                     <view>
+
                         <text style="margin-right: 10rpx;">购票</text>
-                        <text wx:for="{{[1,2,3,4,5]}}" class="iconfont icon-wujiaoxing-"></text>
-                        <text style="margin-left: 10rpx;">9.0</text>
+                        <text style="color: #fe942a;" wx:for="{{item.rating.value}}" class="iconfont icon-wujiaoxing-"></text>
+                        <text wx:for="{{item.rating.max-item.rating.value}}" class="iconfont icon-wujiaoxing-"></text>
+                        <text style="margin-left: 10rpx;">{{item.rating.value*2}}.0</text>
                     </view>
 
                 </view>
             </view>
             <view style="margin-top: 20rpx;" class="xiaowei_center">
-                浪漫又苦涩
-                见面时难舍难分，独自时又需要人依靠，爱情就是这样，你有的时候就特别想依靠，没有的时候又孤独无助，真的人这一辈子还是要多自立，不能只依靠爱情，依靠别人，谈恋爱还是要多注重自身生活的培养。
+                {{item.comment}}
             </view>
             <view style="margin-top: 20rpx;" class="xiaowei_bottom">
                 <view>
-                    04-30 09:42
+                    {{item.create_time}}
                 </view>
                 <view>
                     <text class="iconfont icon-dianzan"></text>
-                    <text>352</text>
+                    <text>{{item.vote_count}}</text>
                     <text class="iconfont icon-dianzan"></text>
-                    <text>6</text>
+                    <text>{{item.vote_count*3}}</text>
                 </view>
             </view>
         </view>
@@ -197,7 +223,6 @@
         <view style="font-weight: 700;color: #fe942a;margin-top: 30rpx;text-align: center;">更多的内容关注二维码</view>
         <image style="margin:200rpx auto;" src="/images/temporary/tpp.jpg" mode="aspectFill"> </image>
     </view>
-
 </view>
 
 

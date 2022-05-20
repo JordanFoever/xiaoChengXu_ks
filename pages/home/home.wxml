@@ -36,7 +36,7 @@
     <!-- 第二部分,列表(电影礼包，拼团领卷，巨星驾到，影城特惠) -->
     <view class="list_select">
         <view>
-            <image mode="aspectFill" src="/images/swiper_1.jpg"></image>
+            <image mode="aspectFill" src="/images/home/tt.jpg"></image>
             <text>电影礼包</text>
         </view>
         <view>
@@ -48,7 +48,7 @@
             <text>巨星驾到</text>
         </view>
         <view>
-            <image mode="aspectFill" src="/images/swiper_1.jpg"></image>
+            <image mode="aspectFill" src="/images/home/bb.jpg"></image>
             <text>影城特惠</text>
         </view>
     </view>
@@ -82,8 +82,8 @@
                 <view class="xiaowei-public xiaowei-movie-director">导演:<text wx:for="{{item.directors}}">{{item}}</text></view>
                 <view class="xiaowei-public xiaowei-movie-role">主演: <text wx:for="{{item.actors}}">{{item}} </text></view>
                 <view class="xaiowei-movie-tags">
-                    <view class="today_hot">今日最热</view>
-                    <view class="week_hot">一周最热</view>
+                    <view  class="today_hot">今日最热</view>
+                    <view  wx:if="{{item.rating.value > 1}}" class="week_hot">一周最热</view>
                 </view>
             </view>
             <!-- 右 -->

@@ -40,7 +40,7 @@ Page({
 			success:(res) => {
                 console.log(res.data);
 				this.setData({
-					commentDataList:res.data.interests
+                    commentDataList:res.data.interests,
 				})
 			}
 		})

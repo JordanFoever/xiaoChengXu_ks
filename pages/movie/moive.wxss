@@ -91,7 +91,12 @@ page{
     padding: 0 6rpx;
     margin-left: 8rpx;
 }
-
+.xiaowei_list text{
+    margin-top: 10rpx;
+}
+.xiaowei_list image{
+    margin-top: 10rpx;
+}
 
 
 

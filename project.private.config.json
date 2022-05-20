@@ -10,7 +10,7 @@
             "list": [
                 {
                     "name": "",
-                    "pathName": "pages/movieDetail/movieDetail",
+                    "pathName": "pages/home/home",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

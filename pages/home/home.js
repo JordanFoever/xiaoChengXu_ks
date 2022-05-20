@@ -53,7 +53,7 @@ Page({
                 select:[false,true]
             })
         }
-        console.log(index);
+        console.log(index); 
     },
     headleBuy(){
         wx.showModal({
