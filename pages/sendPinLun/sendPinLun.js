@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        baseURL1:app.globalData.baseURL1,
+        baseURL2:app.globalData.baseURL2,
         commentContent:'',
          //字数限制
         maxWord: 500,
@@ -29,7 +29,7 @@ Page({
           //   url: '/pages/find/find',
           // })
         wx.request({
-            url:this.data.baseURL1+`/xiaoChengXu_ks_houtai_war_exploded/addPinLun?textarea_content=${this.data.commentContent}&id=${this.data.id}`,
+            url:this.data.baseURL2+`/xiaoChengXu_ks_houtai/addPinLun?textarea_content=${this.data.commentContent}&id=${this.data.id}`,
         })
       },
       // 获得输入框的内容

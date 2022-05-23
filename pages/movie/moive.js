@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        baseURL1: app.globalData.baseURL1,
+        baseURL2: app.globalData.baseURL2,
         moiveList: [],
         paixusheng:[]
     },
@@ -19,7 +19,7 @@ Page({
     },
     getAllMoive() {
         wx.request({
-            url: this.data.baseURL1 + '/xiaoChengXu_ks_houtai_war_exploded/findAllMoive',
+            url: this.data.baseURL2+ '/xiaoChengXu_ks_houtai/findAllMoive',
             method: 'GET',
             success: res => {
                 console.log(res.data);

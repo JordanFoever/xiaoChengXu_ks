@@ -26,8 +26,6 @@ Page({
           url: this.data.baseURL3+'/rexxar/api/v2/subject_collection/movie_showing/items',
           method:'GET',
           success:res=>{
-            //   //有二十条数据
-            //   console.log(res.data.subject_collection_items);
              this.setData({
                  homeList:res.data.subject_collection_items
              })
@@ -92,3 +90,5 @@ Page({
           })
     }  
 })
+
+

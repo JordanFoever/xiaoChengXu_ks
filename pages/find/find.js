@@ -1,3 +1,4 @@
+const app = getApp();
 // pages/find/find.js
 Page({
 
@@ -5,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+		baseURL2:app.globalData.baseURL2,
     },
     /**
      * 生命周期函数--监听页面加载
@@ -15,7 +16,7 @@ Page({
     },
     getRequest(){
       wx.request({
-        url: 'http://localhost:8080/xiaoChengXu_ks_houtai_war_exploded/findAllFindServlet',
+        url: this.data.baseURL2+'/xiaoChengXu_ks_houtai/findAllFindServlet',
         method:'get',
         success:res=>{
           console.log(res.data);
@@ -33,9 +34,6 @@ Page({
         wx.navigateTo({
           url: '/pages/findDetail/findDetail?id='+id,
         })
-        //  wx.redirectTo({
-        //     url:  '/pages/findDetail/findDetail?id='+id,
-        //   })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

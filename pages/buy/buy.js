@@ -75,7 +75,7 @@ Page({
          five: 0,
          six: 0,
          seven: 0,
-         baseURL1:app.globalData.baseURL1,
+         baseURL2:app.globalData.baseURL2,
          moiveList:[]
     },
     isShow: true,
@@ -89,7 +89,7 @@ Page({
     },
     getAllMoive(){
         wx.request({
-          url: this.data.baseURL1+'/xiaoChengXu_ks_houtai_war_exploded/findAllMoive',
+          url: this.data.baseURL2+'/xiaoChengXu_ks_houtai/findAllMoive',
           method:'GET',
           success:res=>{
               console.log(res.data);

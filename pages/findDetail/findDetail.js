@@ -2,7 +2,7 @@ const app = getApp();
 Page({
     data: {
         // 本地主机的地址
-        baseURL1:app.globalData.baseURL1,
+        baseURL2:app.globalData.baseURL2,
         //远程服务器地址
         pinLunList:[],
         pinlunNum:0
@@ -16,7 +16,7 @@ Page({
     // 向后端发送请求,获取当前id的数据(顶部)
     getRequest(aid){
         wx.request({
-          url: this.data.baseURL1+'/xiaoChengXu_ks_houtai_war_exploded/fillAllFindById?id='+aid,
+          url: this.data.baseURL2+'/xiaoChengXu_ks_houtai/fillAllFindById?id='+aid,
           method:'get',
           success:res=>{
               console.log("来自后端的返回的数据",res.data);
@@ -30,7 +30,7 @@ Page({
     // 评论部分的的请求
     getRequestForPinLun(aid){
         wx.request({
-          url: this.data.baseURL1+'/xiaoChengXu_ks_houtai_war_exploded/findAllNeedPinLun?id='+aid,
+          url: this.data.baseURL2+'/xiaoChengXu_ks_houtai/findAllNeedPinLun?id='+aid,
           method:'get',
           success:res=>{
               console.log("返回评论部分的数据",res.data);
